@@ -1,0 +1,4 @@
+#!/bin/bash
+# Script to update the cms site with whatever is on the cms repo
+
+ftp -r /home/marty/development/basic-cms/. a5988938@basic-cms.comze.com
