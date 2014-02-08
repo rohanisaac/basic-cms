@@ -1,3 +1,6 @@
+<?php
+/* This is a template page that is called by every data page, it loads the variables that the pages sends and puts all the variables into the the template page and displays is */
+
 <!doctype html>
 
 <head>
@@ -15,4 +18,10 @@
 	<?php include('includes/footer.php') ?>
 </body>
 </html>
-	
+
+
+?>
+
+
+
+
