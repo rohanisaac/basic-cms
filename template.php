@@ -1,25 +1,27 @@
 <?php
 /* This is a template page that is called by every data page, it loads the variables that the pages sends and puts all the variables into the the template page and displays is */
 
-<!doctype html>
+// if not defined "some var" then echo "this page cannot be accessed directly"
 
-<head>
+echo('<!doctype html>')
+
+echo("""<head>
 	<meta charset="utf-8">
-	<title>Page Title</title>
-	<meta name="description" content="Description here">
-	<meta name="keywords" content="insert keywords here">
+	<title>Site Name - $title</title>
+	<meta name="description" content="$description">
+	<meta name="keywords" content="$title">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
-	<?php include('includes/header.php') ?>
-	<?php include('includes/navigation.php') ?>
-	<?php include('includes/content.php') ?>
-	<?php include('includes/footer.php') ?>
-</body>
+<body>""");
+
+// This probably won't work. I wish this was python
+echo("""<h1>Header code here</h1>""");
+echo($content)
+echo("""<div id="footer"> Footer stuff here</div></body>
 </html>
 
-
+""");
 ?>
 
 
