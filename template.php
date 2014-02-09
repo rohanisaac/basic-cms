@@ -2,6 +2,7 @@
 /* This is a template page that is called by every data page, it loads the variables that the pages sends and puts all the variables into the the template page and displays is */
 
 // if not defined "some var" then echo "this page cannot be accessed directly"
+defined('THISISTHEKEY') or die('This page cannot be accessed directly')
 
 echo '<!doctype html>' 
 

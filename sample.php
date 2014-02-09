@@ -7,6 +7,8 @@ $keywords = "sample,page,website,other,stupid,keywords";
 $body = "This is the body. I don't like this style of encapsulations. It would be better if we could embed straigt html into here."	;
 $parent = "none"; // top level page if none, otherwise, page title
 
+define("THISISTHEKEY", "This is the key");
+
 include 'template.php'
 
 ?>
