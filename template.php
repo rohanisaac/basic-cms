@@ -3,25 +3,27 @@
 
 // if not defined "some var" then echo "this page cannot be accessed directly"
 
-echo('<!doctype html>')
+echo '<!doctype html>' 
 
-echo("""<head>
+echo <<<EOL <head>
 	<meta charset="utf-8">
 	<title>Site Name - $title</title>
 	<meta name="description" content="$description">
-	<meta name="keywords" content="$title">
+	<meta name="keywords" content="$keywords">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>""");
+<body>
+		
+EOL;
 
 // This probably won't work. I wish this was python
 echo("""<h1>Header code here</h1>""");
 echo($content)
-echo("""<div id="footer"> Footer stuff here</div></body>
+echo <<<EOL <div id="footer"> Footer stuff here</div></body>
 </html>
 
-""");
+EOL;
 ?>
 
 
