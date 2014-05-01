@@ -1,1 +1,19 @@
 body {background: #eee;}
+
+.header {
+
+	height: 40px;
+	width: fill;
+	display: block;
+	background-color: #fff;
+
+}
+
+.footer {
+
+	height: 40px;
+	width: fill;
+	display: block;
+	background-color: #fff;
+
+}
