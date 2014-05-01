@@ -1,1 +1,1 @@
-Default landing page, nothing here yet.
+<META HTTP-EQUIV="Refresh" CONTENT="0; URL=welcome.php">
