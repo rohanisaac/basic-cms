@@ -13,7 +13,7 @@
 
 		Keywords: <input type="text" name="keywords"><br />
 
-		Body: <input type="text" class="form-lg" name="body"><br />
+		Body: <input type="text" name="body"><br />
 
 		Parent: <input type="text" name="parent"><br />
 
