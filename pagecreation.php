@@ -1,23 +1,32 @@
-<html>
+<!doctype html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Site Name - Page Creation</title>
+		<meta name="description" content="Page used to generate other pages">
+		<meta name="keywords" content="">
+		<link rel="stylesheet" href="css/adminstyle.css">
+	</head>
+
 <body>
 
 <!-- obviously needs some styling... -->
 
 	<form action="writepage.php" method="post">
 
-		ID: <input type="text" name="id"><br />
+		ID: <input type="text" name="id">
 
-		Title: <input type="text" name="title"><br />
+		Title: <input type="text" name="title">
 
-		Description: <input type="text" name="description"><br />
+		Description: <input type="text" name="description">
 
-		Keywords: <input type="text" name="keywords"><br />
+		Keywords: <input type="text" name="keywords">
 
-		Body: <input type="text" name="body"><br />
+		Body: <textarea type="text" name="body"></textarea>
 
-		Parent: <input type="text" name="parent"><br />
+		Parent: <input type="text" name="parent">
 
-		Key: <input type="text" name="key"><br />
+		Key: <input type="text" name="key">
 
 		<input type="submit">
 
