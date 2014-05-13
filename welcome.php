@@ -9,7 +9,7 @@ $body = '
 <h1>Welcome</h1>
 
 <p>
-
+	So does this work.
 	This is a welcome page. It should welcome you to the site.
 
 </p>
