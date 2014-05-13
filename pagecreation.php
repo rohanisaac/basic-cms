@@ -1,36 +1,60 @@
-<!doctype html>
+<?php 
 
-	<head>
-		<meta charset="utf-8">
-		<title>Site Name - Page Creation</title>
-		<meta name="description" content="Page used to generate other pages">
-		<meta name="keywords" content="">
-		<link rel="stylesheet" href="css/bootstrap.css">
-	</head>
+$id = "pagecreation"; // if this is going to work as a database, we will need a unique key
+$title = "Page Creation";
+$description = "Admin page designed to generate other pages.";
+$keywords = "admin";
 
-<body>
+$body = '
 
-<!-- obviously needs some styling... -->
 
-	<form action="writepage.php" method="post">
+	<form class="form-horizontal" action="writepage.php" method="post">
 
-		ID: <input type="text" name="id">
+	<div class="row">
+		<div class="form-group">
 
-		Title: <input type="text" name="title">
+			<label class="">ID:</label>
+			<input type="text" class="form-control" name="id">
 
-		Description: <input type="text" name="description">
+			<label class="">Title:</label>
+			<input type="text" class="form-control" name="title">
 
-		Keywords: <input type="text" name="keywords">
+			<label class="">Description:</label>
+			<input type="text" class="form-control" name="description">
 
-		Body: <textarea type="text" name="body"></textarea>
+			<label class="">Keywords:</label>
+			<input type="text" class="form-control" name="keywords">
+		</div>
+	</div>
 
-		Parent: <input type="text" name="parent">
+	<div class="row">
 
-		Key: <input type="text" name="key">
+		<div class="form-group">
+			<label class="">Body:</label>
+			<textarea class="form-control" name="body" rows="5"></textarea>
+		</div>
+	</div>
 
-		<input type="submit">
+	<div class="row">
+		<div class="form-group">
+			<label class="">Parent:</label>
+			<input type="text" class="form-control" name="parent">
+
+			<label class="">Key:</label>
+			<input type="text" class="form-control" name="key">
+		</div>
+	</div>
+
+		<input type="submit" id="submit" name="submit" class="btn-lg btn-primary" value="Submit">
 
 	</form>
 
-</body>
-</html>
+	';
+
+$parent = "none"; // top level page if none, otherwise, page title
+
+define("THISISTHEKEY", "createpage");
+
+include('admintemplate.php');
+
+?>

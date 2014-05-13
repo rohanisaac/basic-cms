@@ -26,6 +26,6 @@ $parent = "none"; // top level page if none, otherwise, page title
 
 define("THISISTHEKEY", "blog");
 
-include('template.php')
+include('template.php');
 
 ?>
