@@ -5,7 +5,7 @@
 		<title>Site Name - Page Creation</title>
 		<meta name="description" content="Page used to generate other pages">
 		<meta name="keywords" content="">
-		<link rel="stylesheet" href="css/adminstyle.css">
+		<link rel="stylesheet" href="css/bootstrap.css">
 	</head>
 
 <body>
