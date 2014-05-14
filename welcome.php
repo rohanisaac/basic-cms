@@ -12,6 +12,8 @@ $body = '
 
 <p><a href="blog.php">This blog link</a> should take you to another kind of page, with a different template. There should be no header and footer on this page, but on the next there will be.</p>
 
+<p> Lots of things need to work better. </p>
+
 ';
 
 $parent = "none"; // top level page if none, otherwise, page title
