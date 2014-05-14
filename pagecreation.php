@@ -10,27 +10,32 @@ $body = '
 
 	<form class="form-horizontal" action="writepage.php" method="post">
 
-	<div class="row">
-		<div class="form-group">
+	<div class="form-group">
 
-			<label class="">ID:</label>
+		<label class="col-sm-2 control label">ID:</label>
+		<div class="col-sm-10">
 			<input type="text" class="form-control" name="id">
+		</div>
 
-			<label class="">Title:</label>
-			<input type="text" class="form-control" name="title">
+		<label class="col-sm-2">Title:</label>
+		<div class="col-sm-10">
+		<input type="text" class="form-control" name="title">
+		</div>
+		
+		<label class="col-sm-2">Description:</label>
+		<div class="col-sm-10">
+		<input type="text" class="form-control" name="description">
+		</div>
 
-			<label class="">Description:</label>
-			<input type="text" class="form-control" name="description">
-
-			<label class="">Keywords:</label>
-			<input type="text" class="form-control" name="keywords">
+		<label class="col-sm-2">Keywords:</label>	
+		<div class="col-sm-10">
+		<input type="text" class="form-control" name="keywords">
 		</div>
 	</div>
 
-	<div class="row">
-
-		<div class="form-group">
-			<label class="">Body:</label>
+	<div class="form-group">
+		<label class="">Body:</label>
+		<div class="col-sm-10">
 			<textarea class="form-control" name="body" rows="5"></textarea>
 		</div>
 	</div>
