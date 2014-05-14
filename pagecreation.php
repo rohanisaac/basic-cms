@@ -10,42 +10,60 @@ $body = '
 
 	<form class="form-horizontal" action="writepage.php" method="post">
 
-	<div class="row">
-		<div class="form-group">
-
-			<label class="">ID:</label>
+	<div class="form-group">
+		<label class="col-sm-2 control-label">ID:</label>
+		<div class="col-sm-10">
 			<input type="text" class="form-control" name="id">
+		</div>
+	</div>
 
-			<label class="">Title:</label>
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Title:</label>
+		<div class="col-sm-10">
 			<input type="text" class="form-control" name="title">
-
-			<label class="">Description:</label>
+		</div>
+	</div>
+		
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Description:</label>
+		<div class="col-sm-10">
 			<input type="text" class="form-control" name="description">
-
-			<label class="">Keywords:</label>
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Keywords:</label>	
+		<div class="col-sm-10">
 			<input type="text" class="form-control" name="keywords">
 		</div>
 	</div>
 
-	<div class="row">
-
-		<div class="form-group">
-			<label class="">Body:</label>
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Body:</label>
+		<div class="col-sm-10">
 			<textarea class="form-control" name="body" rows="5"></textarea>
 		</div>
 	</div>
 
-	<div class="row">
-		<div class="form-group">
-			<label class="">Parent:</label>
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Parent:</label>
+		<div class="col-sm-10">
 			<input type="text" class="form-control" name="parent">
-
-			<label class="">Key:</label>
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Key:</label>
+		<div class="col-sm-10">
 			<input type="text" class="form-control" name="key">
 		</div>
 	</div>
 
-		<input type="submit" id="submit" name="submit" class="btn-lg btn-primary" value="Submit">
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-10">
+			<input type="submit" id="submit" name="submit" class="btn-lg btn-primary" value="Submit">
+		</div>
+	</div>
 
 	</form>
 
