@@ -11,46 +11,59 @@ $body = '
 	<form class="form-horizontal" action="writepage.php" method="post">
 
 	<div class="form-group">
-
 		<label class="col-sm-2 control label">ID:</label>
 		<div class="col-sm-10">
 			<input type="text" class="form-control" name="id">
 		</div>
+	</div>
 
+	<div class="form-group">
 		<label class="col-sm-2">Title:</label>
 		<div class="col-sm-10">
-		<input type="text" class="form-control" name="title">
+			<input type="text" class="form-control" name="title">
 		</div>
+	</div>
 		
+	<div class="form-group">
 		<label class="col-sm-2">Description:</label>
 		<div class="col-sm-10">
-		<input type="text" class="form-control" name="description">
+			<input type="text" class="form-control" name="description">
 		</div>
-
+	</div>
+	
+	<div class="form-group">
 		<label class="col-sm-2">Keywords:</label>	
 		<div class="col-sm-10">
-		<input type="text" class="form-control" name="keywords">
+			<input type="text" class="form-control" name="keywords">
 		</div>
 	</div>
 
 	<div class="form-group">
-		<label class="">Body:</label>
+		<label class="col-sm-2">Body:</label>
 		<div class="col-sm-10">
 			<textarea class="form-control" name="body" rows="5"></textarea>
 		</div>
 	</div>
 
-	<div class="row">
-		<div class="form-group">
-			<label class="">Parent:</label>
+	<div class="form-group">
+		<label class="col-sm-2">Parent:</label>
+		<div class="col-sm-10">
 			<input type="text" class="form-control" name="parent">
-
-			<label class="">Key:</label>
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<label class="col-sm-2">Key:</label>
+		<div class="col-sm-10">
 			<input type="text" class="form-control" name="key">
 		</div>
 	</div>
 
-		<input type="submit" id="submit" name="submit" class="btn-lg btn-primary" value="Submit">
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-10">
+			<input type="submit" id="submit" name="submit" class="btn-lg btn-primary" value="Submit">
+		</div>
+	</div>
 
 	</form>
 
