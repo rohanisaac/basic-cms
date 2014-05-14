@@ -11,7 +11,7 @@ $body = '
 	<form class="form-horizontal" action="writepage.php" method="post">
 
 	<div class="form-group">
-		<label class="col-sm-2 control label">ID:</label>
+		<label class="col-sm-2">ID:</label>
 		<div class="col-sm-10">
 			<input type="text" class="form-control" name="id">
 		</div>
