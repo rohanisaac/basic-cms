@@ -34,7 +34,7 @@ $dir = new DirectoryIterator(dirname(__FILE__));
 foreach ($dir as $fileinfo) {
     if (!$fileinfo->isDot()) {
 		$fn = $fileinfo->getFilename();
-		if ($fn == $filename)
+		if ($fn == basename($filename))
 		{
 			$cl = 'class = "active" '; 
 		}
