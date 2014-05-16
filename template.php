@@ -23,11 +23,18 @@ $head = '
 </head>';
 	
 $nav = '<ul>';
+/*
+foreach (glob("*.txt") as $filename) {
+    echo "$filename size " . filesize($filename) . "\n";
+}*/
 
-foreach (glob("*.php") as $fn) {
-    $nav += '<li><a href="'.$fn.'"></a>'.$fn.'</li>';
+$dir = new DirectoryIterator(dirname(__FILE__));
+foreach ($dir as $fileinfo) {
+    if (!$fileinfo->isDot()) {
+		$fn = $fileinfo->getFilename()
+        $nav += '<li><a href="'.$fn.'"></a>'.$fn.'</li>';
+    }
 }
-
 $nav +='</ul>';
 
 if(constant("THISISTHEKEY") == "welcome"){
