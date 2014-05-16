@@ -31,7 +31,7 @@ foreach (glob("*.txt") as $filename) {
 $dir = new DirectoryIterator(dirname(__FILE__));
 foreach ($dir as $fileinfo) {
     if (!$fileinfo->isDot()) {
-		$fn = $fileinfo->getFilename()
+		$fn = $fileinfo->getFilename();
         $nav += '<li><a href="'.$fn.'"></a>'.$fn.'</li>';
     }
 }
