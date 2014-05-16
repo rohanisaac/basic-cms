@@ -34,13 +34,13 @@ $dir = new DirectoryIterator(dirname(__FILE__));
 foreach ($dir as $fileinfo) {
     if (!$fileinfo->isDot()) {
 		$fn = $fileinfo->getFilename();
-        $nav += '<li><a href="'.$fn.'">'.$fn.'</a></li>';
+        $nav .= '<li><a href="'.$fn.'">'.$fn.'</a></li>';
     }
 }
 
 echo $nav;
 
-$nav +='</ul>';
+$nav .='</ul>';
 
 if(constant("THISISTHEKEY") == "welcome"){
 
