@@ -28,15 +28,23 @@ $page = '
 <body>
 
 <div class="container">
-	<ul class="nav nav-pills">';
+	<ul class="nav nav-tabs nav-justified">';
 
 $dir = new DirectoryIterator(dirname(__FILE__));
 foreach ($dir as $fileinfo) {
     if (!$fileinfo->isDot()) {
 		$fn = $fileinfo->getFilename();
+		if ($fn == __FILE__)
+		{
+			$cl = 'class = "active" '; 
+		}
+		else
+		{
+			$cl = '';
+		}
 		if (strpos($fn,'.php') and substr( $fn, 0, 1 ) != "_")
 		{
-			$page .= '<li><a href="'.$fn.'">'.$fn.'</a></li>';
+			$page .= '<li><a '.$cl.'href="'.$fn.'">'.$fn.'</a></li>';
 		}
     }
 }
