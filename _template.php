@@ -28,7 +28,7 @@ $page = '
 <body>
 
 <div class="container">
-	<ul class="nav nav-tabs nav-justified">';
+	<ul class="navbar navbar-nav">';
 
 $dir = new DirectoryIterator(dirname(__FILE__));
 foreach ($dir as $fileinfo) {
@@ -57,7 +57,7 @@ elseif($id == "blog") {
 
 elseif($id == "createpage"){
 	$page .= '
-		<p class="navbar-text">Admin Page Creation</p>';
+		<p>Admin Page Creation</p>';
 }
 else {
 	$page .= '<h1>Header code here</h1>';
@@ -74,7 +74,7 @@ if($id == "blog") {
 }
 
 else {
-	$page .= '<div id="footer"> Footer stuff here</div>';
+	//$page .= '<div id="footer"> Footer stuff here</div>';
 }
 
 /*Finish off the page */
