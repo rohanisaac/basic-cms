@@ -44,14 +44,14 @@ foreach ($dir as $fileinfo) {
 		}
 		if (strpos($fn,'.php') and substr( $fn, 0, 1 ) != "_")
 		{
-			$page .= '<li><a '.$cl.'href="'.$fn.'">'.$fn.'</a></li>';
+			$page .= '<li '.$cl.'><a href="'.$fn.'">'.$fn.'</a></li>';
 		}
     }
 }
 
 $page .='
 	</ul>
-<h1>'.$title.$filename.'</h1>';
+<h1>'.$title.'</h1>';
 
 /*Some choices for what to do for the header section based on the page id 
 we could also add a page class eg: admin pages could all have the same class, blog posts etc. */
