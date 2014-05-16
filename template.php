@@ -20,14 +20,10 @@ $head = '
 	<meta name="description" content="'.$description.'">
 	<meta name="keywords" content="'.$keywords.'">
 	<link rel="stylesheet" href="css/bootstrap.css">
-	<script src="js/bootstrap.min.js"></script>
-</head>';	
+</head>';
 
-$nav = '<div class="btn-group">
-  <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
-    Dropdown <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" role="menu">';
+$nav = '
+  <ul class="nav nav-tabs">';
 
 $dir = new DirectoryIterator(dirname(__FILE__));
 foreach ($dir as $fileinfo) {
