@@ -73,6 +73,6 @@ $parent = "none"; // top level page if none, otherwise, page title
 
 define("THISISTHEKEY", "createpage");
 
-include('admintemplate.php');
+include('template.php');
 
 ?>
