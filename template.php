@@ -23,7 +23,7 @@ $head = '
 	<script src="js/bootstrap.min.js"></script>
 </head>';	
 
-$nav = '<div class="dropdown">
+$nav = '<div>
   <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
     Dropdown <span class="caret"></span>
   </button>
