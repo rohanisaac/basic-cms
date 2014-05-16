@@ -28,7 +28,7 @@ foreach (glob("*.php") as $fn) {
     $nav += '<li><a href="'.$fn.'"></a>'.$fn.'</li>';
 }
 
-$nav +='</ul>'
+$nav +='</ul>';
 
 if(constant("THISISTHEKEY") == "welcome"){
 
