@@ -1,5 +1,5 @@
 <?php 
-
+$filename = __FILE__;
 $id = "createpage"; // if this is going to work as a database, we will need a unique key
 $title = "Page Creation";
 $description = "Admin page designed to generate other pages.";

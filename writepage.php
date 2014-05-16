@@ -27,7 +27,7 @@ fwrite($_POST["id"].'.php','include(\'template.php\');');
 //--------------------------------------------------------------------------------------------
 
 // write the variables in this file
-
+$filename = __FILE__;
 $id = $_POST["id"]; // if this is going to work as a database, we will need a unique key
 $title = $_POST["title"];
 $description = $_POST["description"];
