@@ -69,6 +69,31 @@ elseif(constant("THISISTHEKEY") == "blog") {
 
 }
 
+elseif(constant("THISISTHEKEY") == "createpage"){
+
+	$page = $head.' 
+
+	<body>
+
+	<div class="nav navbar navbar-inverse">
+
+		<p class="navbar-text">Admin Page Creation</p>
+
+	</div>
+
+	<div class="container">
+
+	'.$body.'
+
+	</div>
+
+	</body>
+	</html>
+
+	';
+
+}
+
 else {
 
 	$page = $head.'
