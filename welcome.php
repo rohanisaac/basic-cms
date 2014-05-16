@@ -1,5 +1,6 @@
 <!-- Sample page that loads some data, and sends it to the template -->
 <?php
+$filename = __FILE__;
 $id = "welcome"; // if this is going to work as a database, we will need a unique key
 $title = "Welcome";
 $description = "Page to welcome readers";
