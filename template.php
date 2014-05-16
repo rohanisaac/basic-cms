@@ -22,16 +22,18 @@ $head = '
 	<link rel="stylesheet" href="css/style.css">
 </head>';
 	
-$nav = '';
+$nav = '<ul>';
 
-// stackoverflow code
+// based on some stackoverflow code
 
 $dir = new DirectoryIterator(dirname(__FILE__));
 foreach ($dir as $fileinfo) {
     if (!$fileinfo->isDot()) {
-        $nav += var_dump($fileinfo->getFilename());
+		$fn = $fileinfo->getFilename()
+        $nav += '<li><a href="'.$fn.'"></a>'.$fn.'</li>';
     }
 }
+$nav +='</ul>'
 
 if(constant("THISISTHEKEY") == "welcome"){
 
