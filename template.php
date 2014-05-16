@@ -27,7 +27,7 @@ $nav = '<div class="dropdown">
   <button class="btn dropdown-toggle sr-only" type="button" id="dropdownMenu1" data-toggle="dropdown">
     Dropdown
     <span class="caret"></span>
-  </button><ul class="dropdown-menu">';
+  </button><ul class="dropdown-menu" role="menu">';
 
 $dir = new DirectoryIterator(dirname(__FILE__));
 foreach ($dir as $fileinfo) {
