@@ -9,6 +9,8 @@ defined('THISISTHEKEY') or die('This page cannot be accessed directly');
 
 // good idea, but we probably don't need to generate a completely new variable for each page, just some parts need to be done anew. -R
 
+// Merge this page into template ???
+
 if(constant("THISISTHEKEY") == "createpage"){
 
 	$page = ' 
