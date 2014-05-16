@@ -27,7 +27,8 @@ $page = '
 
 <body>
 
-	<ul class="nav nav-tabs">';
+<div class="container">
+	<ul class="nav nav-tabs nav-justified">';
 
 $dir = new DirectoryIterator(dirname(__FILE__));
 foreach ($dir as $fileinfo) {
@@ -42,12 +43,13 @@ foreach ($dir as $fileinfo) {
 
 $page .='
 	</ul>
-</div>';
+</div>
+<h1>'.$title.'</h1>';
 
 /*Some choices for what to do for the header section based on the page id 
 we could also add a page class eg: admin pages could all have the same class, blog posts etc. */
 if($id == "welcome"){
-	$page .= '<h1>Hope you are welcome here</h1>';
+	// nothing here
 }
 
 elseif($id == "blog") {
@@ -79,6 +81,7 @@ else {
 /*Finish off the page */
 
 $page .= '
+	</div>
 </body>
 </html>
 ';
