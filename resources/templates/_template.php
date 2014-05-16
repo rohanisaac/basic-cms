@@ -22,21 +22,22 @@ $page = '
 	<title>Site Name - '.$title.'</title>
 	<meta name="description" content="'.$description.'">
 	<meta name="keywords" content="'.$keywords.'">
-	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="../css/bootstrap.css">
 </head>
 
 <body>
 
 <div class="container">
-	<ul class="nav nav-tabs nav-justified">';
+	<ul class="nav nav-tabs">';
 
-$dir = new DirectoryIterator(dirname(__FILE__));
+// function used to generate the header
+$dir = new DirectoryIterator(dirname($filename));
 foreach ($dir as $fileinfo) {
     if (!$fileinfo->isDot()) {
 		$fn = $fileinfo->getFilename();
 		if ($fn == basename($filename))
 		{
-			$cl = 'class = "active" '; 
+			$cl = 'class = "active" ';
 		}
 		else
 		{
@@ -49,11 +50,15 @@ foreach ($dir as $fileinfo) {
     }
 }
 
+if ($id == "admin") {
+  $page .= '<li '.$cl.'><a class="pull-right" href="../sitepages/">View Site</a></li>';
+}
+
 $page .='
 	</ul>
 <h1>'.$title.'</h1>';
 
-/*Some choices for what to do for the header section based on the page id 
+/*Some choices for what to do for the header section based on the page id
 we could also add a page class eg: admin pages could all have the same class, blog posts etc. */
 if($id == "welcome"){
 	// nothing here

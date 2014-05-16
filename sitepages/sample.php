@@ -10,6 +10,6 @@ $parent = "none"; // top level page if none, otherwise, page title
 
 define("THISISTHEKEY", "This is the key");
 
-include('_template.php')
+include('../resources/templates/_template.php');
 
 ?>
