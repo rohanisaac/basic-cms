@@ -20,6 +20,7 @@ $head = '
 	<meta name="description" content="'.$description.'">
 	<meta name="keywords" content="'.$keywords.'">
 	<link rel="stylesheet" href="css/bootstrap.css">
+	<script src="js/bootstrap.min.js"></script>
 </head>';	
 
 $nav = '<div class="dropdown">
