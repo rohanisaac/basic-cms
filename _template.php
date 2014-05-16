@@ -51,7 +51,7 @@ foreach ($dir as $fileinfo) {
 
 $page .='
 	</ul>
-<h1>'.$title.__FILE__.'</h1>';
+<h1>'.$title.$filename.'</h1>';
 
 /*Some choices for what to do for the header section based on the page id 
 we could also add a page class eg: admin pages could all have the same class, blog posts etc. */
