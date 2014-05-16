@@ -12,20 +12,31 @@ defined('THISISTHEKEY') or die('This page cannot be accessed directly');
 // Perhaps at some later stage we could change this to another varible in the data page
 
 $head = '
-	<!doctype html>
+<!doctype html>
 
-	<head>
-		<meta charset="utf-8">
-		<title>Site Name - '.$title.'</title>
-		<meta name="description" content="'.$description.'">
-		<meta name="keywords" content="'.$keywords.'">
-		<link rel="stylesheet" href="css/style.css">
-	</head>';
+<head>
+	<meta charset="utf-8">
+	<title>Site Name - '.$title.'</title>
+	<meta name="description" content="'.$description.'">
+	<meta name="keywords" content="'.$keywords.'">
+	<link rel="stylesheet" href="css/style.css">
+</head>';
+	
+$nav = '';
+
+// stackoverflow code
+
+$dir = new DirectoryIterator(dirname(__FILE__));
+foreach ($dir as $fileinfo) {
+    if (!$fileinfo->isDot()) {
+        $nav += var_dump($fileinfo->getFilename());
+    }
+}
 
 if(constant("THISISTHEKEY") == "welcome"){
 
 	$page = $head.' 
-	<body>
+	<body>'.$nav.'
 
 	'.$body.'
 
