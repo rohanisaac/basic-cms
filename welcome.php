@@ -1,12 +1,10 @@
 <!-- Sample page that loads some data, and sends it to the template -->
 <?php
 $id = "welcome"; // if this is going to work as a database, we will need a unique key
-$title = "Welcome Page";
+$title = "Welcome";
 $description = "Page to welcome readers";
 $keywords = "sample,page,website,other,stupid,keywords";
 $body = '
-
-<h1>Welcome</h1>
 
 <p>This is a welcome page. It should welcome you to the site.</p>
 

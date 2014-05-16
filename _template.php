@@ -43,7 +43,6 @@ foreach ($dir as $fileinfo) {
 
 $page .='
 	</ul>
-</div>
 <h1>'.$title.'</h1>';
 
 /*Some choices for what to do for the header section based on the page id 
