@@ -28,7 +28,7 @@ $page = '
 <body>
 
 <div class="container">
-	<ul class="navbar navbar-nav">';
+	<ul class="nav nav-pills">';
 
 $dir = new DirectoryIterator(dirname(__FILE__));
 foreach ($dir as $fileinfo) {
