@@ -1,6 +1,6 @@
 <!-- Sample page that loads some data, and sends it to the template -->
 <?php
-$id = "1234"; // if this is going to work as a database, we will need a unique key
+$id = "welcome"; // if this is going to work as a database, we will need a unique key
 $title = "Welcome Page";
 $description = "Page to welcome readers";
 $keywords = "sample,page,website,other,stupid,keywords";
@@ -20,6 +20,6 @@ $parent = "none"; // top level page if none, otherwise, page title
 
 define("THISISTHEKEY", "welcome");
 
-include('template.php');
+include('_template.php');
 
 ?>

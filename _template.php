@@ -47,7 +47,7 @@ $page .='
 /*Some choices for what to do for the header section based on the page id 
 we could also add a page class eg: admin pages could all have the same class, blog posts etc. */
 if($id == "welcome"){
-	$page .= '<h1>Hope you are welcome here';
+	$page .= '<h1>Hope you are welcome here</h1>';
 }
 
 elseif($id == "blog") {

@@ -39,6 +39,6 @@ $parent = $_POST["parent"]; // top level page if none, otherwise, page title
 define("THISISTHEKEY", $_POST["key"]);
 
 // and include the template to style the data, like a preview
-include('template.php');
+include('_template.php');
 
 ?>

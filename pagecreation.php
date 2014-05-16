@@ -1,6 +1,6 @@
 <?php 
 
-$id = "pagecreation"; // if this is going to work as a database, we will need a unique key
+$id = "createpage"; // if this is going to work as a database, we will need a unique key
 $title = "Page Creation";
 $description = "Admin page designed to generate other pages.";
 $keywords = "admin";
@@ -73,6 +73,6 @@ $parent = "none"; // top level page if none, otherwise, page title
 
 define("THISISTHEKEY", "createpage");
 
-include('template.php');
+include('_template.php');
 
 ?>
