@@ -11,7 +11,10 @@ defined('THISISTHEKEY') or die('This page cannot be accessed directly');
 
 // Perhaps at some later stage we could change this to another varible in the data page
 
-$head = '
+// We could just use the id which we pass
+
+
+$page = '
 <!doctype html>
 
 <head>
@@ -20,10 +23,11 @@ $head = '
 	<meta name="description" content="'.$description.'">
 	<meta name="keywords" content="'.$keywords.'">
 	<link rel="stylesheet" href="css/bootstrap.css">
-</head>';
+</head>
 
-$nav = '
-  <ul class="nav nav-tabs">';
+<body>
+
+	<ul class="nav nav-tabs">';
 
 $dir = new DirectoryIterator(dirname(__FILE__));
 foreach ($dir as $fileinfo) {
@@ -31,86 +35,53 @@ foreach ($dir as $fileinfo) {
 		$fn = $fileinfo->getFilename();
 		if (strpos($fn,'.php') and substr( $fn, 0, 1 ) != "_")
 		{
-			$nav .= '<li><a href="'.$fn.'">'.$fn.'</a></li>';
+			$page .= '<li><a href="'.$fn.'">'.$fn.'</a></li>';
 		}
     }
 }
 
-$nav .='</ul></div>';
+$page .='
+	</ul>
+</div>';
 
-if(constant("THISISTHEKEY") == "welcome"){
-
-	$page = $head.' 
-	<body>'.$nav.'
-
-	'.$body.'
-
-	</body>
-	</html>
-
-	';
-
+/*Some choices for what to do for the header section based on the page id 
+we could also add a page class eg: admin pages could all have the same class, blog posts etc. */
+if($id == "welcome"){
+	$page .= '<h1>Hope you are welcome here';
 }
 
-elseif(constant("THISISTHEKEY") == "blog") {
-
-	$page = $head.'
-
-	<body>
-		<div class="header">Header for blog</div>
-
-	'.$body.'
-
-		<div class="footer">Footer for blog</div>
-	</body>
-	</html>
-
-	';
-
+elseif($id == "blog") {
+	$page .= '<div class="header">Header for blog</div>';
 }
 
-elseif(constant("THISISTHEKEY") == "createpage"){
+elseif($id == "createpage"){
+	$page .= '
+		<p class="navbar-text">Admin Page Creation</p>';
+}
+else {
+	$page .= '<h1>Header code here</h1>';
+}
 
-	$page = $head.' 
+/* Including the main body container */
+$page .= '
+	<div class="container">'.$body.'</div>';
 
-	<body>
 
-	<div class="nav navbar navbar-inverse">
-
-		<p class="navbar-text">Admin Page Creation</p>
-
-	</div>
-
-	<div class="container">
-
-	'.$body.'
-
-	</div>
-
-	</body>
-	</html>
-
-	';
-
+/* Some footer options */
+if($id == "blog") {
+	$page .= '<div class="footer">Footer for blog</div>';
 }
 
 else {
-
-	$page = $head.'
-
-	<body>	
-
-		<h1>Header code here</h1>
-		
-	'.$body.'
-
-		<div id="footer"> Footer stuff here</div>
-	</body>
-	</html>
-
-	';
-
+	$page .= '<div id="footer"> Footer stuff here</div>';
 }
+
+/*Finish off the page */
+
+$page .= '
+</body>
+</html>
+';
 
 echo $page;
 ?>
