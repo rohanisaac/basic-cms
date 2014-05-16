@@ -24,15 +24,10 @@ $head = '
 	
 $nav = '<ul>';
 
-// based on some stackoverflow code
-
-$dir = new DirectoryIterator(dirname(__FILE__));
-foreach ($dir as $fileinfo) {
-    if (!$fileinfo->isDot()) {
-		$fn = $fileinfo->getFilename()
-        $nav += '<li><a href="'.$fn.'"></a>'.$fn.'</li>';
-    }
+foreach (glob("*.php") as $fn) {
+    $nav += '<li><a href="'.$fn.'"></a>'.$fn.'</li>';
 }
+
 $nav +='</ul>'
 
 if(constant("THISISTHEKEY") == "welcome"){
