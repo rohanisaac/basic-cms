@@ -19,10 +19,14 @@ $head = '
 	<title>Site Name - '.$title.'</title>
 	<meta name="description" content="'.$description.'">
 	<meta name="keywords" content="'.$keywords.'">
-	<link rel="stylesheet" href="css/style.css">
-</head>';
-	
-$nav = '<ul>';
+	<link rel="stylesheet" href="css/bootstrap.css">
+</head>';	
+
+$nav = '<div class="dropdown">
+  <button class="btn dropdown-toggle sr-only" type="button" id="dropdownMenu1" data-toggle="dropdown">
+    Dropdown
+    <span class="caret"></span>
+  </button><ul class="dropdown-menu">';
 
 $dir = new DirectoryIterator(dirname(__FILE__));
 foreach ($dir as $fileinfo) {
@@ -35,7 +39,7 @@ foreach ($dir as $fileinfo) {
     }
 }
 
-$nav .='</ul>';
+$nav .='</ul></div>';
 
 if(constant("THISISTHEKEY") == "welcome"){
 
