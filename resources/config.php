@@ -4,6 +4,6 @@
 
 /* Looks good, let's do it - R*/
 
-$SITE_NAME = 'Basic CMS I';
+$SITE_NAME = "Basic CMS I";
 
 ?>

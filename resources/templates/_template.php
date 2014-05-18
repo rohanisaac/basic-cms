@@ -13,9 +13,9 @@ defined('THISISTHEKEY') or die('This page cannot be accessed directly.');
 
 // We could just use the id which we pass
 
-include('../config.php') or die('Could not load global variables.'); // global variables ALL CAPS
+(@include '../config.php') or die('Could not load global variables.'); // global variables ALL CAPS
 
-echo $SITE_NAME;
+vardump($SITE_NAME);
 
 /* Markdown reader stuff */
 spl_autoload_register(function($class){
@@ -43,7 +43,9 @@ $page = '
 
 
 // Store names in a menu folder in the same directory
-include('../../../'.dirname($filename).'_menu.php') or die('Could not load menu.');
+(@include '../../../'.dirname($filename).'_menu.php') or die('Could not load menu.');
+
+vardump($menu);
 
 // function used to generate the header
 $dir = new DirectoryIterator(dirname($filename));
