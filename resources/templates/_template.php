@@ -42,7 +42,8 @@ $page = '
 
 // Store names in a menu folder in the same directory
 echo $filename;
-(@include '../../'.dirname($filename).'_menu.php') or die('Could not load menu.');
+
+(@include '_menu.php') or die('Could not load menu.');
 
 // function used to generate the header
 $dir = new DirectoryIterator(dirname($filename));
