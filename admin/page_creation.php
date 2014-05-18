@@ -8,7 +8,7 @@ $body = file_get_contents($id.'.txt');
 
 $parent = "none"; // top level page if none, otherwise, page title
 
-define("THISISTHEKEY", "createpage");
+define("THISISTHEKEY", "1");
 
 include('../resources/templates/_template.php');
 
