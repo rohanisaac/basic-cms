@@ -15,6 +15,8 @@ defined('THISISTHEKEY') or die('This page cannot be accessed directly.');
 
 include('../config.php') or die('Could not load global variables.'); // global variables ALL CAPS
 
+echo $SITE_NAME;
+
 /* Markdown reader stuff */
 spl_autoload_register(function($class){
 require preg_replace('{\\\\|_(?!.*\\\\)}', DIRECTORY_SEPARATOR, ltrim($class, '\\')).'.php';
