@@ -20,7 +20,7 @@ spl_autoload_register(function($class){
 require preg_replace('{\\\\|_(?!.*\\\\)}', DIRECTORY_SEPARATOR, ltrim($class, '\\')).'.php';
 });
 
-use ..\..\Michelf\Markdown;
+use \Michelf\Markdown;
 $body_html = Markdown::defaultTransform($body); // convert markdown body to HTML
 
 $page = '
