@@ -1,6 +1,6 @@
 <?php
 $filename = __FILE__;
-$id = "admin"; // if this is going to work as a database, we will need a unique key
+$id = "page_creation"; // if this is going to work as a database, we will need a unique key
 $title = "Page Creation";
 $description = "Admin page designed to generate other pages.";
 $keywords = "admin";
