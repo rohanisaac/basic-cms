@@ -1,5 +1,5 @@
 ##This is a welcome page. It should welcome you to the site.
 
-(This blog link)[blog.php] should take you to another kind of page, with a different template. There should be no header and footer on this page, but on the next there will be.
+[This blog link](blog.php) should take you to another kind of page, with a different template. There should be no header and footer on this page, but on the next there will be.
 
 Lots of things need to work better.
