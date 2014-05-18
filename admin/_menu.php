@@ -1,7 +1,8 @@
 <?php
 
 $menu = array(
-	"pagecreation.php" => "Create a Page",
+	"page_creation.php" => "Create a Page",
+	"write_page.php" => "This shouldn't be here",
 );
 
 ?>
