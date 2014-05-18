@@ -40,10 +40,12 @@ $page = '
 	<ul class="nav nav-tabs">';
 
 // function used to generate the header
+// Store names in a menu folder in the same directory
 $dir = new DirectoryIterator(dirname($filename));
 foreach ($dir as $fileinfo) {
     if (!$fileinfo->isDot()) {
 		$fn = $fileinfo->getFilename();
+		include(dirname($filename).'_menu.php');
 		if ($fn == basename($filename))
 		{
 			$cl = 'class = "active" ';
@@ -54,7 +56,7 @@ foreach ($dir as $fileinfo) {
 		}
 		if (strpos($fn,'.php') and substr( $fn, 0, 1 ) != "_")
 		{
-			$page .= '<li '.$cl.'><a href="'.$fn.'">'.$fn.'</a></li>';
+			$page .= '<li '.$cl.'><a href="'.$fn.'">'.$menu[$fn].'</a></li>';
 		}
     }
 }
