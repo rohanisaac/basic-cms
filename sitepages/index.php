@@ -9,7 +9,7 @@ $body = file_get_contents($id.'.txt');
 
 $parent = "none"; // top level page if none, otherwise, page title
 
-define("THISISTHEKEY", "welcome");
+define("THISISTHEKEY", "1");
 
 include('../resources/templates/_template.php');
 

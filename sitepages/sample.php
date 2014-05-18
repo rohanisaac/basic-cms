@@ -8,7 +8,7 @@ $keywords = "sample,page,website,other,stupid,keywords";
 $body = file_get_contents($id.'.txt');
 $parent = "none"; // top level page if none, otherwise, page title
 
-define("THISISTHEKEY", "This is the key");
+define("THISISTHEKEY", "1");
 
 include('../resources/templates/_template.php');
 

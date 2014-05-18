@@ -5,24 +5,11 @@ $id = "blog"; // if this is going to work as a database, we will need a unique k
 $title = "Blog";
 $description = "Page for blagging.";
 $keywords = "sample,page,website,other,stupid,keywords";
-$body = '
-<p>
-
-	This is a blog page. With any luck there should be a header. Maybe even a footer
-
-</p>
-
-<p>
-
-	bloggy blog blog
-
-</p>
-
-';
+$body = file_get_contents($id.'.txt');
 
 $parent = "none"; // top level page if none, otherwise, page title
 
-define("THISISTHEKEY", "blog");
+define("THISISTHEKEY", "1");
 
 include('../resources/templates/_template.php');
 
