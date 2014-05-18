@@ -45,7 +45,7 @@ $dir = new DirectoryIterator(dirname($filename));
 foreach ($dir as $fileinfo) {
     if (!$fileinfo->isDot()) {
 		$fn = $fileinfo->getFilename();
-		include(dirname($filename).'_menu.php');
+		include('../../../'.dirname($filename).'_menu.php');
 		if ($fn == basename($filename))
 		{
 			$cl = 'class = "active" ';

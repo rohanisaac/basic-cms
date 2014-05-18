@@ -1,4 +1,3 @@
-<!-- Sample page that loads some data, and sends it to the template -->
 <?php
 $filename = __FILE__;
 $id = "welcome"; // unique key, body file name

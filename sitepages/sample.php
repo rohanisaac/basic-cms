@@ -1,4 +1,3 @@
-<!-- Sample page that loads some data, and sends it to the template -->
 <?php
 $filename = __FILE__;
 $id = "123"; // if this is going to work as a database, we will need a unique key
