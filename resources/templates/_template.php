@@ -15,9 +15,13 @@ defined('THISISTHEKEY') or die('This page cannot be accessed directly');
 
 include('../config.php'); // global variables ALL CAPS
 
+/* Markdown reader stuff */
+spl_autoload_register(function($class){
+require preg_replace('{\\\\|_(?!.*\\\\)}', DIRECTORY_SEPARATOR, ltrim($class, '\\')).'.php';
+});
+
 use ..\..\Michelf\Markdown;
 $body_html = Markdown::defaultTransform($body); // convert markdown body to HTML
-
 
 $page = '
 <!doctype html>
