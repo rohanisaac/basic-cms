@@ -15,8 +15,6 @@ defined('THISISTHEKEY') or die('This page cannot be accessed directly.');
 
 (@include '../resources/config.php') or die('Could not load global variables.'); // global variables ALL CAPS
 
-vardump($SITE_NAME);
-
 /* Markdown reader stuff */
 spl_autoload_register(function($class){
 require preg_replace('{\\\\|_(?!.*\\\\)}', DIRECTORY_SEPARATOR, ltrim($class, '\\')).'.php';
@@ -44,8 +42,6 @@ $page = '
 
 // Store names in a menu folder in the same directory
 (@include '../../'.dirname($filename).'_menu.php') or die('Could not load menu.');
-
-vardump($menu);
 
 // function used to generate the header
 $dir = new DirectoryIterator(dirname($filename));
