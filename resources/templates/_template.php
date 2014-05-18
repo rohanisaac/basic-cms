@@ -13,13 +13,18 @@ defined('THISISTHEKEY') or die('This page cannot be accessed directly');
 
 // We could just use the id which we pass
 
+include('../config.php'); // global variables ALL CAPS
+
+use ..\..\Michelf\Markdown;
+$body_html = Markdown::defaultTransform($body); // convert markdown body to HTML
+
 
 $page = '
 <!doctype html>
 
 <head>
 	<meta charset="utf-8">
-	<title>Site Name - '.$title.'</title>
+	<title>'.$SITE_NAME.' - '.$title.'</title>
 	<meta name="description" content="'.$description.'">
 	<meta name="keywords" content="'.$keywords.'">
 	<link rel="stylesheet" href="../css/bootstrap.css">
@@ -78,7 +83,7 @@ else {
 
 /* Including the main body container */
 $page .= '
-	<div class="container">'.$body.'</div>';
+	<div class="container">'.$body_html.'</div>';
 
 
 /* Some footer options */
