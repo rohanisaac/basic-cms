@@ -1,0 +1,5 @@
+This is the body. 
+
+I don't like this style of encapsulations. 
+
+It would be better if we could embed straight html into here.
