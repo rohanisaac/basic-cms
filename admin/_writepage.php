@@ -3,12 +3,12 @@
 //--------------------------------------------------------------------------------------------
 //			SOLUTION FOR WRITING INFO TO FILE AS A "DATABASE" THING
 //--------------------------------------------------------------------------------------------
-/*
 
-//fopen($_POST["id"].'.php', "w") or die("could not write file"); I couldn't get this to open the file...
+
+fopen($_POST["id"].'.php', "w") or die("could not write file"); //I couldn't get this to open the file...
 
 // all the tags we would need
-//$tags = array("id","title","description","keywords","body","parent");
+$tags = array("id","title","description","keywords","body","parent");
 
 // loop through tags
 foreach($tags as $item) {
@@ -20,13 +20,15 @@ foreach($tags as $item) {
 fwrite($_POST["id"].'.php', 'define("THISISTHEKEY", '.$_POST["key"].");\n");
 fwrite($_POST["id"].'.php','include(\'template.php\');');
 
-*/
+
 
 //--------------------------------------------------------------------------------------------
 //			TEMPORARY SOLUTION/PREVIEW
 //--------------------------------------------------------------------------------------------
 
 // write the variables in this file
+/*
+
 $filename = __FILE__;
 $id = $_POST["id"]; // if this is going to work as a database, we will need a unique key
 $title = $_POST["title"];
@@ -40,5 +42,5 @@ define("THISISTHEKEY", $_POST["key"]);
 
 // and include the template to style the data, like a preview
 include('_template.php');
-
+*/
 ?>
