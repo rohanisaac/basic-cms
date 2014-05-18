@@ -1,3 +1,22 @@
 This is a blog page. With any luck there should be a header. Maybe even a footer
 
-Bloggy blog blog
+## Trying out some markdown features.
+
+__Bold Font__ here, as well as some [urls][Google] Or some _italics_ or more *of this*
+
+![Kitten](http://placekitten.com/g/600/400 "An image here too, off place kitten")
+
+>A blockquote or two does not hurt
+>Maybe a bit more
+
+	How about some code
+	#include<iostream>
+	
+Or some inline code `printf("%s","This");`.
+
+1. List are also interesting
+2. Or two
+
+---
+
+[Google]: http://www.google.com "I really don't need this"

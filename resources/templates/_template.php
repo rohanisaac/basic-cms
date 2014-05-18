@@ -41,8 +41,6 @@ $page = '
 
 
 // Store names in a menu folder in the same directory
-echo $filename;
-
 (@include '_menu.php') or die('Could not load menu.');
 
 // function used to generate the header
@@ -50,16 +48,13 @@ $dir = new DirectoryIterator(dirname($filename));
 foreach ($dir as $fileinfo) {
     if (!$fileinfo->isDot()) {
 		$fn = $fileinfo->getFilename();
-		if ($fn == basename($filename))
-		{
+		if ($fn == basename($filename)) {
 			$cl = 'class = "active" ';
 		}
-		else
-		{
+		else {
 			$cl = '';
 		}
-		if (strpos($fn,'.php') and substr( $fn, 0, 1 ) != "_")
-		{
+		if (strpos($fn,'.php') and substr( $fn, 0, 1 ) != "_") {
 			$page .= '<li '.$cl.'><a href="'.$fn.'">'.$menu[$fn].'</a></li>';
 		}
     }
@@ -92,8 +87,7 @@ else {
 }
 
 /* Including the main body container */
-$page .= '
-	<div class="container">'.$body_html.'</div>';
+$page .= $body_html;
 
 
 /* Some footer options */
