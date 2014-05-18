@@ -13,7 +13,7 @@ defined('THISISTHEKEY') or die('This page cannot be accessed directly.');
 
 // We could just use the id which we pass
 
-(@include '../config.php') or die('Could not load global variables.'); // global variables ALL CAPS
+(@include '../resources/config.php') or die('Could not load global variables.'); // global variables ALL CAPS
 
 vardump($SITE_NAME);
 
@@ -43,7 +43,7 @@ $page = '
 
 
 // Store names in a menu folder in the same directory
-(@include '../../../'.dirname($filename).'_menu.php') or die('Could not load menu.');
+(@include '../../'.dirname($filename).'_menu.php') or die('Could not load menu.');
 
 vardump($menu);
 
