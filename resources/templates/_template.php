@@ -39,13 +39,15 @@ $page = '
 <div class="container">
 	<ul class="nav nav-tabs">';
 
-// function used to generate the header
+
 // Store names in a menu folder in the same directory
+include('../../../'.dirname($filename).'_menu.php');
+
+// function used to generate the header
 $dir = new DirectoryIterator(dirname($filename));
 foreach ($dir as $fileinfo) {
     if (!$fileinfo->isDot()) {
 		$fn = $fileinfo->getFilename();
-		include('../../../'.dirname($filename).'_menu.php');
 		if ($fn == basename($filename))
 		{
 			$cl = 'class = "active" ';
