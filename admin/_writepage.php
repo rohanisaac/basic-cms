@@ -13,6 +13,7 @@ $tags = array("id","title","description","keywords","body","parent");
 // loop through tags
 foreach($tags as $item) {
 	// write the tag name as a php variable and equal it to the _POST variable
+  // if ($item ==)
 	fwrite('$'.$item.' = ' . $_POST["item"] . ";\n");
 
 }
