@@ -18,7 +18,7 @@ foreach($tags as $item) {
 }
 // define the key and include the template
 fwrite($_POST["id"].'.php', 'define("THISISTHEKEY", '.$_POST["key"].");\n");
-fwrite($_POST["id"].'.php','include(\'template.php\');');
+fwrite($_POST["id"].'.php','include(\'..\resources\templates\_template.php\');');
 
 
 
