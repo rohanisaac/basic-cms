@@ -36,8 +36,8 @@ $page = '
 
 <body>
 
-<div class="container">
-	<ul class="nav nav-tabs">';
+  <div class="container">
+	  <ul class="nav nav-tabs">';
 
 
 // Store names in a menu folder in the same directory
@@ -47,16 +47,16 @@ $page = '
 $dir = new DirectoryIterator(dirname($filename));
 foreach ($dir as $fileinfo) {
     if (!$fileinfo->isDot()) {
-		$fn = $fileinfo->getFilename();
-		if ($fn == basename($filename)) {
-			$cl = 'class = "active" ';
-		}
-		else {
-			$cl = '';
-		}
-		if (strpos($fn,'.php') and substr( $fn, 0, 1 ) != "_") {
-			$page .= '<li '.$cl.'><a href="'.$fn.'">'.$menu[$fn].'</a></li>';
-		}
+		  $fn = $fileinfo->getFilename();
+		  if ($fn == basename($filename)) {
+			  $cl = 'class = "active" ';
+		  }
+		  else {
+			  $cl = '';
+		  }
+		  if (strpos($fn,'.php') and substr( $fn, 0, 1 ) != "_") {
+			  $page .= '<li '.$cl.'><a href="'.$fn.'">'.$menu[$fn].'</a></li>';
+		  }
     }
 }
 
@@ -102,7 +102,7 @@ else {
 /*Finish off the page */
 
 $page .= '
-	</div>
+  </div>
 </body>
 </html>
 ';

@@ -5,22 +5,31 @@
 //--------------------------------------------------------------------------------------------
 
 
-fopen($_POST["id"].'.php', "w") or die("could not write file"); //I couldn't get this to open the file...
+$f = fopen($_POST["id"].'.php', "w") or die("could not write file"); //I couldn't get this to open the file...
+chmod($_POST["id"].'.php', 0777);
+
 
 // all the tags we would need
-$tags = array("id","title","description","keywords","body","parent");
+$tags = array("id","title","description","keywords","parent");
+
+fwrite($f,"<?php\n" . '$filename = __FILE__;' . "\n");
 
 // loop through tags
 foreach($tags as $item) {
 	// write the tag name as a php variable and equal it to the _POST variable
-  // if ($item ==)
-	fwrite('$'.$item.' = ' . $_POST["item"] . ";\n");
+	fwrite($f,'$'.$item.' = "' . $_POST[$item] .  "\";\n");
 
 }
-// define the key and include the template
-fwrite($_POST["id"].'.php', 'define("THISISTHEKEY", '.$_POST["key"].");\n");
-fwrite($_POST["id"].'.php','include(\'..\resources\templates\_template.php\');');
 
+// need to write the body file
+
+// define the key and include the template
+fwrite($f, 'define("THISISTHEKEY", "'.$_POST["key"]."\");\n");
+fwrite($f,'include(\'../resources/templates/_template.php\');');
+
+fwrite($f,"\n?>");
+
+header( 'Location: ./'. $_POST["id"] .'.php' );
 
 
 //--------------------------------------------------------------------------------------------
