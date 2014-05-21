@@ -5,8 +5,10 @@
 //--------------------------------------------------------------------------------------------
 
 
-$f = fopen($_POST["id"].'.php', "w") or die("could not write file"); //I couldn't get this to open the file...
+$f = fopen($_POST["id"].'.php', "w") or die("could not write file");
 chmod($_POST["id"].'.php', 0777);
+$b = fopen($_POST["id"].'.txt', "w") or die("could not write file");
+chmod($_POST["id"].'.txt', 0777);
 
 
 // all the tags we would need
@@ -16,12 +18,12 @@ fwrite($f,"<?php\n" . '$filename = __FILE__;' . "\n");
 
 // loop through tags
 foreach($tags as $item) {
-	// write the tag name as a php variable and equal it to the _POST variable
-	fwrite($f,'$'.$item.' = "' . $_POST[$item] .  "\";\n");
-
+	  fwrite($f,'$'.$item.' = "' . $_POST[$item] .  "\";\n");
 }
 
-// need to write the body file
+// write the body to the txt file
+fwrite($b, $_POST['body']);
+fwrite($f, '$body = file_get_contents($id.\'.txt\');');
 
 // define the key and include the template
 fwrite($f, 'define("THISISTHEKEY", "'.$_POST["key"]."\");\n");
