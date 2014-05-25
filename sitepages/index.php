@@ -6,9 +6,7 @@ $description = "Page to welcome readers";
 $keywords = "sample,page,website,other,stupid,keywords";
 $body = file_get_contents($id.'.txt');
 
-$parent = "none"; // top level page if none, otherwise, page title
-
-define("THISISTHEKEY", "1");
+$class = "welcome";
 
 include('../resources/templates/_template.php');
 
