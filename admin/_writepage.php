@@ -4,11 +4,16 @@
 //			SOLUTION FOR WRITING INFO TO FILE AS A "DATABASE" THING
 //--------------------------------------------------------------------------------------------
 
+if (!is_dir('../sitepages/' . $_POST["class"])) {
+  $oldumask = umask(0);
+  mkdir('../sitepages/' . $_POST["class"]) or die('dir could not be created');
+  umask($oldumask);
+}
 
-$f = fopen($_POST["id"].'.php', "w") or die("could not write file");
-chmod($_POST["id"].'.php', 0777);
-$b = fopen($_POST["id"].'.txt', "w") or die("could not write file");
-chmod($_POST["id"].'.txt', 0777);
+$f = fopen('../sitepages/' . $_POST["class"] . '/' . $_POST["id"] . '.php', "w") or die("could not write file");
+chmod('../sitepages/' . $_POST["class"] . '/' . $_POST["id"] . '.php', 0777);
+$b = fopen('../sitepages/' . $_POST["class"] . '/' . $_POST["id"] . '.txt', "w") or die("could not write markdown");
+chmod('../sitepages/' . $_POST["class"] . '/' . $_POST["id"] . '.txt', 0777);
 
 
 // all the tags we would need
@@ -23,15 +28,14 @@ foreach($tags as $item) {
 
 // write the body to the txt file
 fwrite($b, $_POST['body']);
-fwrite($f, '$body = file_get_contents($id.\'.txt\');');
+fwrite($f, '$body = file_get_contents($id.\'.txt\');' . "\n");
 
-// define the key and include the template
-fwrite($f, 'define("THISISTHEKEY", "'.$_POST["key"]."\");\n");
-fwrite($f,'include(\'../resources/templates/_template.php\');');
+// include template
+fwrite($f,'include(\'../../resources/templates/_template.php\');');
 
 fwrite($f,"\n?>");
 
-header( 'Location: ./'. $_POST["id"] .'.php' );
+header( 'Location: ../sitepages/' . $_POST["class"] . '/' . $_POST["id"].'.php' );
 
 
 //--------------------------------------------------------------------------------------------
