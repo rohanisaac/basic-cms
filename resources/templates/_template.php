@@ -9,7 +9,7 @@
 
 // We could just use the id which we pass
 
-(@include '../resources/config.php') or die('Could not load global variables.'); // global variables ALL CAPS
+//(@include '../resources/config.php') or die('Could not load global variables.'); // global variables ALL CAPS
 
 /* Markdown reader stuff */
 spl_autoload_register(function($class){

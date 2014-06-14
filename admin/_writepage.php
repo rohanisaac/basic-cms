@@ -11,13 +11,13 @@ if (!is_dir('../sitepages/' . $_POST["class"])) {
 }
 
 $f = fopen('../sitepages/' . $_POST["class"] . '/' . $_POST["id"] . '.php', "w") or die("could not write file");
-chmod('../sitepages/' . $_POST["class"] . '/' . $_POST["id"] . '.php', 0777);
+chmod('../sitepages/' . $_POST["class"] . '/' . $_POST["id"] . '.php', 0666);
 $b = fopen('../sitepages/' . $_POST["class"] . '/' . $_POST["id"] . '.txt', "w") or die("could not write markdown");
-chmod('../sitepages/' . $_POST["class"] . '/' . $_POST["id"] . '.txt', 0777);
+chmod('../sitepages/' . $_POST["class"] . '/' . $_POST["id"] . '.txt', 0666);
 
 
 // all the tags we would need
-$tags = array("id","title","description","keywords","parent");
+$tags = array("id","title","description","keywords","class");
 
 fwrite($f,"<?php\n" . '$filename = __FILE__;' . "\n");
 
