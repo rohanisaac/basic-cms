@@ -19,89 +19,116 @@ require preg_replace('{\\\\|_(?!.*\\\\)}', DIRECTORY_SEPARATOR, ltrim($class, '\
 use \Michelf\Markdown;
 $body_html = Markdown::defaultTransform($body); // convert markdown body to HTML
 
-$page = '
-<!doctype html>
+if($class != 'test'){
 
-<head>
-	<meta charset="utf-8">
-	<title>'.$SITE_NAME.' - '.$title.'</title>
-	<meta name="description" content="'.$description.'">
-	<meta name="keywords" content="'.$keywords.'">
-	<link rel="stylesheet" href="../css/bootstrap.css">
-</head>
+  $page = '
+  <!doctype html>
 
-<body>
+  <head>
+    <meta charset="utf-8">
+    <title>'.$SITE_NAME.' - '.$title.'</title>
+    <meta name="description" content="'.$description.'">
+    <meta name="keywords" content="'.$keywords.'">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+  </head>
 
-  <div class="container">
-	  <ul class="nav nav-tabs">';
+  <body>
+
+    <div class="container">
+      <ul class="nav nav-tabs">';
 
 
-// Store names in a menu folder in the same directory
-(@include '_menu.php') or die('Could not load menu.');
+  // Store names in a menu folder in the same directory
+    (@include '_menu.php') or die('Could not load menu.');
 
-// function used to generate the header
-$dir = new DirectoryIterator(dirname($filename));
-foreach ($dir as $fileinfo) {
-    if (!$fileinfo->isDot()) {
-		  $fn = $fileinfo->getFilename();
-		  if ($fn == basename($filename)) {
-			  $cl = 'class = "active" ';
-		  }
-		  else {
-			  $cl = '';
-		  }
-		  if (strpos($fn,'.php') and substr( $fn, 0, 1 ) != "_") {
-			  $page .= '<li '.$cl.'><a href="'.$fn.'">'.$menu[$fn].'</a></li>';
-		  }
-    }
-}
+  // function used to generate the header
+  $dir = new DirectoryIterator(dirname($filename));
+  foreach ($dir as $fileinfo) {
+      if (!$fileinfo->isDot()) {
+        $fn = $fileinfo->getFilename();
+        if ($fn == basename($filename)) {
+          $cl = 'class = "active" ';
+        }
+        else {
+          $cl = '';
+        }
+        if (strpos($fn,'.php') and substr( $fn, 0, 1 ) != "_") {
+          $page .= '<li '.$cl.'><a href="'.$fn.'">'.$menu[$fn].'</a></li>';
+        }
+      }
+  }
 
-if ($class == "admin") {
-  $page .= '<li><a class="pull-right" href="../sitepages/">View Site</a></li>';
-}
+  if ($class == "admin") {
+    $page .= '<li><a class="pull-right" href="../sitepages/">View Site</a></li>';
+  }
 
-$page .='
-	</ul>
-<h1>'.$title.'</h1>';
+  $page .='
+    </ul>
+  <h1>'.$title.'</h1>';
 
-/*Some choices for what to do for the header section based on the page id
-we could also add a page class eg: admin pages could all have the same class, blog posts etc. */
-if($id == "welcome"){
-	// nothing here
-}
+  /*Some choices for what to do for the header section based on the page id
+  we could also add a page class eg: admin pages could all have the same class, blog posts etc. */
+  if($id == "welcome"){
+    // nothing here
+  }
 
-elseif($id == "blog") {
-	$page .= '<div class="header">Header for blog</div>';
-}
+  elseif($id == "blog") {
+    $page .= '<div class="header">Header for blog</div>';
+  }
 
-elseif($id == "page_creation"){
-	$page .= '
-		<p>Admin Page Creation</p>';
-}
+  elseif($id == "page_creation"){
+    $page .= '
+      <p>Admin Page Creation</p>';
+  }
+  else {
+    $page .= '<h1>Header code here</h1>';
+  }
+
+  /* Including the main body container */
+  $page .= $body_html;
+
+
+  /* Some footer options */
+  if($id == "blog") {
+    $page .= '<div class="footer">Footer for blog</div>';
+  }
+
+  else {
+    //$page .= '<div id="footer"> Footer stuff here</div>';
+  }
+
+  /*Finish off the page */
+
+  $page .= '
+    </div>
+  </body>
+  </html>
+  ';
+} // end main if
 else {
-	$page .= '<h1>Header code here</h1>';
+    $page = '
+  <!doctype html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>'.$SITE_NAME.' - '.$title.'</title>
+    <meta name="description" content="'.$description.'">
+    <meta name="keywords" content="'.$keywords.'">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+  </head>
+
+  <body>';
+
+   /* Including the main body container */
+  $page .= $body_html;
+
+  $page .= '
+    </div>
+  </body>
+  </html>
+  ';
+
 }
-
-/* Including the main body container */
-$page .= $body_html;
-
-
-/* Some footer options */
-if($id == "blog") {
-	$page .= '<div class="footer">Footer for blog</div>';
-}
-
-else {
-	//$page .= '<div id="footer"> Footer stuff here</div>';
-}
-
-/*Finish off the page */
-
-$page .= '
-  </div>
-</body>
-</html>
-';
 
 echo $page;
 ?>

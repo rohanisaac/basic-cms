@@ -1,0 +1,3 @@
+##Welcome!##
+
+Thank you for choosing our CMS. Would you like to visit the [admin](./admin/) section or the [site](./sitepages/) itself?
