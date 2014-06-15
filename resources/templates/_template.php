@@ -75,9 +75,14 @@ if($class != 'test'){
   elseif($id == "blog") {
     $page .= '<div class="header">Header for blog</div>';
 	// first just try listing the blog posts
-    $blog_pages = new DirectoryIterator(dirname($filename).'blog/');
-    foreach ($blog_pages as $filename) {
-        $page .= $filename->getFilename();
+    $blog_pages = new DirectoryIterator(dirname($filename).'/blog');
+    foreach ($blog_pages as $fileinfo) {
+		if ($fileinfo->isDot())
+			continue;
+        $page .= '<h2>'.$fileinfo->getFilename().'</h2>';
+		$file_data = file_get_contents('blog/'.$fileinfo->getFilename());
+		$page .= Markdown::defaultTransform($file_data); // convert markdown body to HTML
+		$page .= '<hr />';
     }
   }
 
