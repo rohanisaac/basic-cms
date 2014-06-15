@@ -1,10 +1,10 @@
-This is a blog page. With any luck there should be a header. Maybe even a footer
+This is a blog page. With any luck there should be a header. Maybe even a footer. This page should pull down info from a all the pages in the blog subfolder. Those pages should also have corresponding php pages
 
 ## Trying out some markdown features.
 
 __Bold Font__ here, as well as some [urls][Google] Or some _italics_ or more *of this*
 
-![Kitten](http://placekitten.com/g/600/400 "An image here too, off place kitten")
+![Kitten](http://placekitten.com/g/600/400 "An image here too, off of place kitten")
 
 >A blockquote or two does not hurt
 >Maybe a bit more

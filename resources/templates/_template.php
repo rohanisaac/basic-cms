@@ -74,6 +74,11 @@ if($class != 'test'){
 
   elseif($id == "blog") {
     $page .= '<div class="header">Header for blog</div>';
+	// first just try listing the blog posts
+    $blog_pages = new DirectoryIterator(dirname($filename).'blog/');
+    foreach ($blog_pages as $filename) {
+        $page .= $filename->getFilename();
+    }
   }
 
   elseif($id == "page_creation"){
